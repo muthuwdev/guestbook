@@ -9,11 +9,6 @@ router.get("/", verifyAdmin, getAllUsers);
 
 //get user by id
 router.get("/:id",verifyUser, findUserById);
-// router.post("/registeradmin", registerAdmin );
-// router.put("/update/:id", updateRole);
 
-// router.get("/", getAllRoles);
-
-// router.delete("/delete/:id", deleteRole);
 
 export default router;
