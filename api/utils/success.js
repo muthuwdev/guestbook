@@ -1,5 +1,5 @@
 export const createSuccess = (statusCode, successMessage, data)=>{
-    console.log("statusCodestatusCode"+statusCode)
+    console.log("statusCodestatusCodeeeeeeeeee"+successMessage)
     const successObj = {
         status:statusCode,
         message:successMessage,
