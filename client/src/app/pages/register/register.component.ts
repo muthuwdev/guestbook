@@ -3,13 +3,13 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { confirmPasswordValidator } from '../../validators/confirm-password';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -31,7 +31,7 @@ export default class RegisterComponent implements OnInit {
     },
     {
       validator: confirmPasswordValidator('password', 'confirmPassword')
-    })
+    });
   }
 
   register(){
@@ -44,6 +44,6 @@ export default class RegisterComponent implements OnInit {
       },error:(err)=>{
         console.log(err)
       }
-    })
+    });
   }
 }

@@ -5,9 +5,15 @@
 
 
 <div class="nav-items">
-<span class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Login</span>
-<span class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Register</span>
-<span class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Welcome</span>
-<span class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Logout</span>
+    <ng-container *ngIf="!isLoggedIn">
+        <span routerLink="/login" class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Login</span>
+        <span routerLink="/register" class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Register</span>
+    </ng-container>
+
+<ng-container *ngIf="isLoggedIn">
+    <span class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Welcome</span>
+    <span routerLink="/users" class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> UserTable</span>
+<span routerLink="/login" (click)="logout()" class="text-sm cursor-pointer text-gray-100 font-bold m-3 hover:underline hover:text-indigo-100"> Logout</span>
+</ng-container>
 </div>
 </nav>
